@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://kit.fontawesome.com/0b351401c7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="l">
+        <h2>Login</h2>
+        <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+            <input class="a" type="email" name="fname" placeholder="Email"><br><br>
+            <input class="c" type="password" name="pw" placeholder="Password">
+            <br><br>
+            <div class="p">
+                <a class="h" href="#">Forget password?</a><br><br>
+            </div>
+            <button class="b">Login</button><br><br>
+            <div class="i">
+                <span class="s">Don't have an account?
+                    <a href="signup.html">Signup</a></span><br><br>
+            </div>
+            <hr><br>
+            <button class="u"><i class="fa-brands fa-facebook"></i>  Login with Facebook</button><br><br>
+            <button class="v"><i class="fa-brands fa-google"></i>   Login with Google</button>
+        </form>
+    </div>
+    <script>
+        function validateForm() {
+            let x = document.forms["myForm"]["fname"].value;
+            let pw = document.forms["myForm"]["pw"].value;
+            if (x == "") {
+                alert("Required");
+                return false;
+            }
+            else if (pw.length < 8) {
+                alert("Must contain at least 8");
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>
