@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://kit.fontawesome.com/0b351401c7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="ss.css">
+</head>
+
+<body>
+    <div class="f">
+        <h2>Signup</h2>
+        <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+            <input class="a" type="email" name="e" placeholder="Email"><br><br>
+            <input class="b" type="password" name="fname" placeholder="Create password"><br><br>
+            <input class="c" type="password" name="pw" placeholder="Confirm password"><br><br>
+            <button class="d">Signup</button><br><br>
+            <div class="p">
+                <span class="s">Already have an account?<a href="login.html">Login</a></span><br><br>
+            </div>
+            <hr><br><br>
+            <button class="u"><i class="fa-brands fa-facebook"></i> Login with Facebook</button><br><br>
+            <button class="v"><i class="fa-brands fa-google"></i> Login with Google</button>
+        </form>
+    </div>
+    <script>
+        function validateForm() {
+            let y = document.forms["myForm"]["e"].value;
+            let x = document.forms["myForm"]["fname"].value;
+            let pw = document.forms["myForm"]["pw"].value;
+            if (y == "") {
+                alert("required");
+                return false;
+            }
+            else if (pw.length < 8) {
+                alert("must contain at least 8 characters");
+                return false;
+            }
+            else if (x != pw) {
+                alert("password doesn't match");
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>
